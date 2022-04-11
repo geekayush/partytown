@@ -25,6 +25,76 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <!-- <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-C6YTYEBE5E");
+    </script> -->
+    <!-- Google Tag Manager -->
+    <!-- <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-NW34J4Q");
+    </script> -->
+    <!-- End Google Tag Manager -->
+    <script>
+      dataLayer = [];
+    </script>
+    <!-- <script type="text/partytown">
+      window.addEventListener("load", function () {
+        let gtmScript = document.createElement("script");
+        gtmScript.src = `https://www.googletagmanager.com/ns.html?id=GTM-NW34J4Q`;
+
+        setTimeout(function () {
+          (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+              "gtm.start": new Date().getTime(),
+              event: "gtm.js",
+            });
+            var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s),
+              dl = l != "dataLayer" ? "&l=" + l : "";
+            j.defer = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+          })(window, document, "script", "dataLayer", "GTM-NW34J4Q");
+          document.body.appendChild(gtmScript);
+        }, 0);
+      });
+    </script> -->
+    <script type="text/partytown">
+        var rudderanalytics = window.rudderanalytics = [];
+        var  methods = ["load", "page", "track", "identify", "reset", "ready", "setAnonymousId"];
+        for (var i=0; i<methods.length; i++) {
+            var method = methods[i];
+            rudderanalytics[method] = function(methodName) {
+                return function() {
+                rudderanalytics.push([methodName, ...arguments]);
+                }
+            } (method)
+        };
+        rudderanalytics.load(<%= JSON.stringify('1Xw0r3h5UkJhTd7i4MyWYyjDQFZ') %>, <%= JSON.stringify('https://rudderapi.1mg.com') %>);
+        window.addEventListener("load", function() {
+          let rudderScript = document.createElement('script');
+          rudderScript.src = "https://cdn.rudderlabs.com/rudder-analytics.min.js";
+
+          setTimeout(function() {
+              document.body.appendChild(rudderScript);
+          }, 0);
+      })
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

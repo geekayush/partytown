@@ -1,22 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+
+import { Partytown } from "@builder.io/partytown/react";
 
 function App() {
   return (
     <div className="App">
+      <Partytown
+        debug={true}
+        logCalls={true}
+        forward={["rudderanalytics.track"]}
+      />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={() => {
+            rudderanalytics.track("HELLO");
+            console.log("WINDOW", window);
+          }}
         >
-          Learn React
-        </a>
+          Trigger the goddamn function!
+        </button>
       </header>
     </div>
   );
